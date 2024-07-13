@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { Outlet } from 'react-router-dom'
+import CustomButton from './components/Button'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,7 +11,7 @@ function App() {
   return (
     <>
       {/* all the other elements */}
-      <div id="detail">
+      <div id="detail" className=''>
         <Outlet />
       </div>
     </>
@@ -18,3 +19,4 @@ function App() {
 }
 
 export default App;
+
