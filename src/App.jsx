@@ -3,7 +3,8 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 import { Outlet } from 'react-router-dom';
-import Carousel from './components/Carousel ';  // Ensure the file name and path are correct
+import Carousel from './components/Carousel ';  
+import Navbar from './components/Navbar';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -20,8 +21,10 @@ function App() {
     <>
       {/* all the other elements */}
       <div id="detail">
+      <Navbar />
         <Carousel images={images} />
         <Outlet />
+       
       </div>
     </>
   );
