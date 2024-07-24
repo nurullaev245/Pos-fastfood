@@ -7,7 +7,7 @@ const Signup = () => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async(event) => {
     event.preventDefault();
     if (!username) {
       alert('Придумайте логин!');
@@ -25,6 +25,32 @@ const Signup = () => {
       alert('Напишите номер телефона!');
       return;
     }
+
+    if (isSubmitted) {
+      try {
+        const response = await fetch('https://localhost:3000/users', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            username,
+            password,
+            email,
+            phone,
+          }),
+        });
+
+        if (response.ok) {
+          alert('Регистрация успешно прошла')
+          setIsSubmitted(true);
+        } else {
+          alert('Ошибка регистрации!')
+        }
+      } catch (e) {
+        alert('Ошибка регистарции!')
+      }
+    }
     setIsSubmitted(true);
   };
 
@@ -38,7 +64,7 @@ const Signup = () => {
         onSubmit={handleSubmit} 
         className='bg-base-300 py-20 px-10 max-w-[50%] rounded-2xl mx-auto my-10 flex flex-col gap-4'
       >
-        <p className='text-center font-bold tracking-wider text-4xl'>Авторизация</p>
+        <p className='text-center font-bold tracking-wider text-4xl'>Регистрация</p>
         <div className='flex flex-col gap-4'>
           <input 
             type='text' 

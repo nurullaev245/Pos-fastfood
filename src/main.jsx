@@ -7,10 +7,10 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from 'react-router-dom';
-import ErrorPage from './pages/ErrorPage.jsx';
-import Home from './pages/Home.jsx';
-import Signin from './pages/Signin.jsx';
-import Signup from './pages/Signup.jsx';
+import ErrorPage from './pages/Errorpage';
+import Home from './pages/Home';
+import Signin from './pages/Signin';
+import Signup from './pages/Signup';
 
 const router = createBrowserRouter([
   {

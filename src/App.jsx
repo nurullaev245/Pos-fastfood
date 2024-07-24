@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import { Outlet } from 'react-router-dom';
-import Carousel from './components/Carousel ';  
+import Carousel from './components/Carousel';  
 import Navbar from './components/Navbar';
 
 function App() {
