@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Carousel from '../components/Carousel';
+import Products from '../components/Products';
 
 const Home = () => {
   const [count, setCount] = useState(0);
@@ -11,7 +13,8 @@ const Home = () => {
 
   return (
     <div>
-      <Carousel images={images} />
+      {/* <Carousel images={images} /> */}
+      <Products />
     </div>
   );
 };
